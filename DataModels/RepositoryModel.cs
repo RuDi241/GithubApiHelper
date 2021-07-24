@@ -2,6 +2,9 @@
 
 namespace GithubApiHelper.DataModels
 {
+    /// <summary>
+    /// Class that represents the data received from "https://api.github.com/repos/{Owner}/{Repo_name}"
+    /// </summary>
     public class RepositoryModel
     {
         [JsonProperty(PropertyName = "id")]

@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace GithubApiHelper
 {
-    public class GithubClient 
+    public class GithubClient : IApiClient
     {
         #region Consts
         private const string REPOSITORY_URI = "https://api.github.com/repos/";
@@ -39,15 +39,14 @@ namespace GithubApiHelper
         }
         #endregion
         #region Public Methods
-        public async Task<RepositoryModel> GetRepositoryDataAsync(string Owner, string Name)
+        public async Task<T> GetDataAsync<T>(string uri)
         {
-            if (string.IsNullOrWhiteSpace(Owner)) throw new ArgumentException("Owner can't be null, empty or whitespace.");
-            if (string.IsNullOrWhiteSpace(Name)) throw new ArgumentException("Name can't be null, empty or whitespace.");
-            RepositoryModel result = new RepositoryModel();
+            if (string.IsNullOrWhiteSpace(uri)) throw new ArgumentException("Owner can't be null, empty or whitespace.");
+            T result;
             using (var request = new HttpRequestMessage())
             {
                 request.Method = HttpMethod.Get;
-                request.RequestUri = new Uri(REPOSITORY_URI + Owner + '/' + Name);
+                request.RequestUri = new Uri(uri);
                 using (var response = await HttpClient.SendAsync(request))
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
@@ -55,7 +54,7 @@ namespace GithubApiHelper
                         throw new HttpRequestException("Http status code: " + response.StatusCode.ToString());
                     }
                     string responseContent = await response.Content.ReadAsStringAsync();
-                    result = JsonConvert.DeserializeObject<RepositoryModel>(responseContent);
+                    result = JsonConvert.DeserializeObject<T>(responseContent);
                 }
             }
             return result;
