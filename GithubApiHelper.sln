@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubApiHelper", "GithubApiHelper.csproj", "{84F2DD3B-28A6-4A24-AA08-D93E209EF15F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "..\ConsoleApp1\TestApp.csproj", "{C2A18880-F1F0-4CDA-8B27-F145B25107D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84F2DD3B-28A6-4A24-AA08-D93E209EF15F} = {84F2DD3B-28A6-4A24-AA08-D93E209EF15F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84F2DD3B-28A6-4A24-AA08-D93E209EF15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F2DD3B-28A6-4A24-AA08-D93E209EF15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F2DD3B-28A6-4A24-AA08-D93E209EF15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F2DD3B-28A6-4A24-AA08-D93E209EF15F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A18880-F1F0-4CDA-8B27-F145B25107D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A18880-F1F0-4CDA-8B27-F145B25107D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A18880-F1F0-4CDA-8B27-F145B25107D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A18880-F1F0-4CDA-8B27-F145B25107D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94AD19ED-A0B4-4774-A2D2-DCD99E2CFD44}
+	EndGlobalSection
+EndGlobal
